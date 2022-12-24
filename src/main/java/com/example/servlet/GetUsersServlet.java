@@ -14,7 +14,7 @@ import java.util.Set;
 @WebServlet("/users")
 public class GetUsersServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Set<User> users = Warehouse.getInstance().getUsers();
         req.setAttribute("users", users);
         resp.sendRedirect("/users");
