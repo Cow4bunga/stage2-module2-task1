@@ -19,8 +19,8 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User(req.getParameter("firstname"),
-                req.getParameter("secondname"));
+        User user = new User(req.getParameter("firstName"),
+                req.getParameter("secondName"));
         Warehouse.getInstance().addUser(user);
         req.setAttribute("add", user);
         resp.sendRedirect("/add");
